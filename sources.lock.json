@@ -1,0 +1,34 @@
+{
+  "checked_on": "2026-10-18",
+  "target_major": 16,
+  "provenance_kind": "observed branch revisions; not an integrated bench certification",
+  "framework": {
+    "repository": "frappe/frappe",
+    "commit": "4515014c87ece6cb20ee91d2cfb121c5cbd1ff4a"
+  },
+  "erpnext": {
+    "repository": "frappe/erpnext",
+    "commit": "5af6561f5aa48104559692fb4fd82f2580e8d338"
+  },
+  "hrms": {
+    "repository": "frappe/hrms",
+    "commit": "2478afc7a8f4959d500f6d17522853f0d244e38f"
+  },
+  "reuse_candidates": {
+    "flow": {
+      "repository": "frappe/flow_client",
+      "commit": "4a3189b6cbef0cad8ed16b24220d11242672996b",
+      "required": false
+    },
+    "fac": {
+      "repository": "buildswithpaul/Frappe_Assistant_Core",
+      "commit": "3a7a0b4a3bf589334d7816065377e8cbbd4e5cd9",
+      "required": false
+    },
+    "skills": {
+      "repository": "lubusIN/frappe-skills",
+      "commit": "afd9ea13afe8f3312e0dc53bcb483acac4ddf9ed",
+      "mode": "selected unchanged references"
+    }
+  }
+}

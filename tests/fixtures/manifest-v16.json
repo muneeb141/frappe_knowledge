@@ -1,0 +1,19 @@
+{
+  "project_id": "v16-research",
+  "sources": [
+    {
+      "app": "hrms",
+      "repository": "frappe/hrms",
+      "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+      "version": "16",
+      "root": "upstream/hrms"
+    },
+    {
+      "app": "erpnext",
+      "repository": "frappe/erpnext",
+      "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+      "version": "16",
+      "root": "upstream/erpnext"
+    }
+  ]
+}

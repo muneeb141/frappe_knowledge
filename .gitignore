@@ -53,3 +53,10 @@ jspm_packages/
 
 # Aider AI Chat
 .aider*
+
+# Local starter package kept outside the public app repository.
+frappe-knowledge-v16-starter/
+frappe-knowledge-v16-starter.zip
+
+# Generated research output.
+build/
