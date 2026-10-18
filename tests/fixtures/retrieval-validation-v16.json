@@ -1,0 +1,8 @@
+[
+  {"question": "Where are allowed state transitions checked before saving a document?", "expected_app": "frappe", "expected_path": "frappe/model/workflow.py"},
+  {"question": "How are debit and credit totals checked on a Journal Entry?", "expected_app": "erpnext", "expected_path": "erpnext/accounts/doctype/journal_entry/journal_entry.py"},
+  {"question": "How does Salary Slip derive loss of pay from attendance?", "expected_app": "hrms", "expected_path": "hrms/payroll/doctype/salary_slip/salary_slip.py"},
+  {"question": "What happens when Leave Encashment is submitted with Payment Entry?", "expected_app": "hrms", "expected_path": "hrms/hr/doctype/leave_encashment/leave_encashment.py"},
+  {"question": "Where does Delivery Note validate stock reservation entries?", "expected_app": "erpnext", "expected_path": "erpnext/stock/doctype/delivery_note/delivery_note.py"},
+  {"question": "How does Scheduled Job Type decide whether a job is due?", "expected_app": "frappe", "expected_path": "frappe/core/doctype/scheduled_job_type/scheduled_job_type.py"}
+]

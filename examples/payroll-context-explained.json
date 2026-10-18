@@ -1,0 +1,769 @@
+{
+  "schema_version": 1,
+  "project_id": "v16-research",
+  "profile_id": "frappe-v16",
+  "snapshot_id": "bd9077d7fa97b0fe4ffaf669f95ae0e3c2375984998852bb26e9501e1abea8a4",
+  "sources": [
+    {
+      "app": "erpnext",
+      "repository": "frappe/erpnext",
+      "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+      "version": "16"
+    },
+    {
+      "app": "hrms",
+      "repository": "frappe/hrms",
+      "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+      "version": "16"
+    }
+  ],
+  "coverage": {
+    "status": "partial",
+    "extractors": [
+      "doctype_link_fields",
+      "python_imports",
+      "literal_doctype_calls",
+      "controller_convention"
+    ],
+    "limitations": [
+      "No JavaScript or dynamic call resolution",
+      "No workflow, permissions, hooks or business-rule inference",
+      "Declared revisions require checkout verification"
+    ],
+    "checkout_verified": false,
+    "fixture_mode": true
+  },
+  "query": "Payroll Entry",
+  "nodes": [
+    {
+      "id": "hrms:doctype:Payroll Entry",
+      "kind": "doctype",
+      "title": "Payroll Entry",
+      "app": "hrms",
+      "resolved": true,
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "id": "erpnext:doctype:Journal Entry",
+      "kind": "doctype",
+      "title": "Journal Entry",
+      "app": "erpnext",
+      "resolved": true,
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      },
+      "source_description": "A direct entry in your books, for anything without its own form.",
+      "description_status": "source_declared_unverified",
+      "description_evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L7-L7",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 7,
+        "end_line": 7,
+        "excerpt": " \"description\": \"A direct entry in your books, for anything without its own form.\",",
+        "excerpt_truncated": false
+      }
+    },
+    {
+      "id": "hrms:module:hrms.payroll.doctype.payroll_entry.payroll_entry",
+      "kind": "module",
+      "title": "hrms.payroll.doctype.payroll_entry.payroll_entry",
+      "app": "hrms",
+      "resolved": true,
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.py",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.py#L1-L15",
+        "sha256": "d21364af6723c1fe5b35086eeb377b83f6212bff06c4a8f6a3f503ea933bcc12",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "# Copyright (c) 2017, Frappe Technologies Pvt. Ltd. and contributors\n# For license information, please see license.txt\n\nimport datetime\nimport json\n\nfrom dateutil.relativedelta import relativedelta\n\nimport frappe\nfrom frappe import _\nfrom frappe.desk.reportview import get_match_cond\nfrom frappe.model.document import Document\nfrom frappe.query_builder.functions import Coalesce, Count\nfrom frappe.utils import (\n\tDATE_FORMAT,",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "id": "hrms:symbol:hrms/payroll/doctype/payroll_entry/payroll_entry.py:41:PayrollEntry",
+      "kind": "symbol",
+      "title": "PayrollEntry",
+      "app": "hrms",
+      "resolved": true,
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.py",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.py#L41-L55",
+        "sha256": "d21364af6723c1fe5b35086eeb377b83f6212bff06c4a8f6a3f503ea933bcc12",
+        "start_line": 41,
+        "end_line": 55,
+        "excerpt": "class PayrollEntry(Document):\n\tdef onload(self):\n\t\tif self.docstatus == 0 and not self.salary_slips_created and self.employees:\n\t\t\t[employees_eligible_for_overtime, unsubmitted_overtime_slips] = self.get_overtime_slip_details()\n\t\t\tovertime_step = None\n\t\t\tif unsubmitted_overtime_slips:\n\t\t\t\tovertime_step = \"Submit\"\n\t\t\telif employees_eligible_for_overtime:\n\t\t\t\tovertime_step = \"Create\"\n\n\t\t\tself.overtime_step = overtime_step\n\n\t\tif not self.docstatus == 1 or self.salary_slips_submitted:\n\t\t\treturn\n",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "id": "unresolved:doctype:Account",
+      "kind": "doctype",
+      "title": "Account",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Bank Account",
+      "kind": "doctype",
+      "title": "Bank Account",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Branch",
+      "kind": "doctype",
+      "title": "Branch",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Company",
+      "kind": "doctype",
+      "title": "Company",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Cost Center",
+      "kind": "doctype",
+      "title": "Cost Center",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Currency",
+      "kind": "doctype",
+      "title": "Currency",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Department",
+      "kind": "doctype",
+      "title": "Department",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Designation",
+      "kind": "doctype",
+      "title": "Designation",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Employee Grade",
+      "kind": "doctype",
+      "title": "Employee Grade",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Payroll Employee Detail",
+      "kind": "doctype",
+      "title": "Payroll Employee Detail",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Project",
+      "kind": "doctype",
+      "title": "Project",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Auto Repeat",
+      "kind": "doctype",
+      "title": "Auto Repeat",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Finance Book",
+      "kind": "doctype",
+      "title": "Finance Book",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Journal Entry Account",
+      "kind": "doctype",
+      "title": "Journal Entry Account",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Journal Entry Template",
+      "kind": "doctype",
+      "title": "Journal Entry Template",
+      "app": "",
+      "resolved": false
+    },
+    {
+      "id": "unresolved:doctype:Letter Head",
+      "kind": "doctype",
+      "title": "Letter Head",
+      "app": "",
+      "resolved": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "erpnext:doctype:Journal Entry",
+      "relation": "LINK_FIELD",
+      "field": "inter_company_journal_entry_reference",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "erpnext:doctype:Journal Entry",
+      "relation": "LINK_FIELD",
+      "field": "amended_from",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "erpnext:doctype:Journal Entry",
+      "relation": "LINK_FIELD",
+      "field": "reversal_of",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "unresolved:doctype:Account",
+      "relation": "LINK_FIELD",
+      "field": "periodic_entry_difference_account",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "unresolved:doctype:Account",
+      "relation": "LINK_FIELD",
+      "field": "stock_asset_account",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "unresolved:doctype:Auto Repeat",
+      "relation": "LINK_FIELD",
+      "field": "auto_repeat",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "unresolved:doctype:Company",
+      "relation": "LINK_FIELD",
+      "field": "company",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "unresolved:doctype:Currency",
+      "relation": "LINK_FIELD",
+      "field": "total_amount_currency",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "unresolved:doctype:Finance Book",
+      "relation": "LINK_FIELD",
+      "field": "finance_book",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "unresolved:doctype:Journal Entry Account",
+      "relation": "CHILD_TABLE",
+      "field": "accounts",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "unresolved:doctype:Journal Entry Template",
+      "relation": "LINK_FIELD",
+      "field": "from_template",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "erpnext:doctype:Journal Entry",
+      "target": "unresolved:doctype:Letter Head",
+      "relation": "LINK_FIELD",
+      "field": "letter_head",
+      "evidence": {
+        "app": "erpnext",
+        "path": "erpnext/accounts/doctype/journal_entry/journal_entry.json",
+        "revision": "5af6561f5aa48104559692fb4fd82f2580e8d338",
+        "url": "https://github.com/frappe/erpnext/blob/5af6561f5aa48104559692fb4fd82f2580e8d338/erpnext/accounts/doctype/journal_entry/journal_entry.json#L1-L15",
+        "sha256": "b39f1ecd2cc9efe0d07533c3a972042c58c455ba686c2c316168bb70f41c6f65",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_auto_repeat\": 1,\n \"allow_import\": 1,\n \"autoname\": \"naming_series:\",\n \"creation\": \"2022-01-25 10:29:58.717206\",\n \"description\": \"A direct entry in your books, for anything without its own form.\",\n \"doctype\": \"DocType\",\n \"document_type\": \"Document\",\n \"documentation\": \"https://docs.frappe.io/erpnext/user/manual/en/journal-entry\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"entry_type_and_date\",\n  \"company\",\n  \"voucher_type\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "hrms:doctype:Payroll Entry",
+      "relation": "LINK_FIELD",
+      "field": "amended_from",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Account",
+      "relation": "LINK_FIELD",
+      "field": "payment_account",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Account",
+      "relation": "LINK_FIELD",
+      "field": "payroll_payable_account",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Bank Account",
+      "relation": "LINK_FIELD",
+      "field": "bank_account",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Branch",
+      "relation": "LINK_FIELD",
+      "field": "branch",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Company",
+      "relation": "LINK_FIELD",
+      "field": "company",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Cost Center",
+      "relation": "LINK_FIELD",
+      "field": "cost_center",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Currency",
+      "relation": "LINK_FIELD",
+      "field": "currency",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Department",
+      "relation": "LINK_FIELD",
+      "field": "department",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Designation",
+      "relation": "LINK_FIELD",
+      "field": "designation",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Employee Grade",
+      "relation": "LINK_FIELD",
+      "field": "grade",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Payroll Employee Detail",
+      "relation": "CHILD_TABLE",
+      "field": "employees",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:doctype:Payroll Entry",
+      "target": "unresolved:doctype:Project",
+      "relation": "LINK_FIELD",
+      "field": "project",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.json",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.json#L1-L15",
+        "sha256": "8f30568a6b41e0ae085f440dbc1ed2d6fc3a066152a51d3efb1ab1cf6b9b07ac",
+        "start_line": 1,
+        "end_line": 15,
+        "excerpt": "{\n \"actions\": [],\n \"allow_copy\": 1,\n \"autoname\": \"HR-PRUN-.YYYY.-.#####\",\n \"creation\": \"2017-10-23 15:22:29.291323\",\n \"doctype\": \"DocType\",\n \"documentation\": \"https://docs.frappe.io/hr/payroll-entry\",\n \"document_type\": \"Other\",\n \"engine\": \"InnoDB\",\n \"field_order\": [\n  \"select_payroll_period\",\n  \"posting_date\",\n  \"company\",\n  \"column_break_5\",\n  \"currency\",",
+        "excerpt_truncated": true
+      }
+    },
+    {
+      "source": "hrms:module:hrms.payroll.doctype.payroll_entry.payroll_entry",
+      "target": "erpnext:doctype:Journal Entry",
+      "relation": "USES_DOCTYPE",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.py",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.py#L191-L191",
+        "sha256": "d21364af6723c1fe5b35086eeb377b83f6212bff06c4a8f6a3f503ea933bcc12",
+        "start_line": 191,
+        "end_line": 191,
+        "excerpt": "\t\t\tjournal_entry = frappe.get_doc(\"Journal Entry\", je)",
+        "excerpt_truncated": false
+      }
+    },
+    {
+      "source": "hrms:module:hrms.payroll.doctype.payroll_entry.payroll_entry",
+      "target": "erpnext:doctype:Journal Entry",
+      "relation": "USES_DOCTYPE",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.py",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.py#L794-L794",
+        "sha256": "d21364af6723c1fe5b35086eeb377b83f6212bff06c4a8f6a3f503ea933bcc12",
+        "start_line": 794,
+        "end_line": 794,
+        "excerpt": "\t\tjournal_entry = frappe.new_doc(\"Journal Entry\")",
+        "excerpt_truncated": false
+      }
+    },
+    {
+      "source": "hrms:module:hrms.payroll.doctype.payroll_entry.payroll_entry",
+      "target": "unresolved:doctype:Account",
+      "relation": "USES_DOCTYPE",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.py",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.py#L116-L118",
+        "sha256": "d21364af6723c1fe5b35086eeb377b83f6212bff06c4a8f6a3f503ea933bcc12",
+        "start_line": 116,
+        "end_line": 118,
+        "excerpt": "\t\tpayroll_payable_account_type = frappe.db.get_value(\n\t\t\t\"Account\", self.payroll_payable_account, \"account_type\"\n\t\t)",
+        "excerpt_truncated": false
+      }
+    },
+    {
+      "source": "hrms:module:hrms.payroll.doctype.payroll_entry.payroll_entry",
+      "target": "unresolved:doctype:Account",
+      "relation": "USES_DOCTYPE",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.py",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.py#L1013-L1013",
+        "sha256": "d21364af6723c1fe5b35086eeb377b83f6212bff06c4a8f6a3f503ea933bcc12",
+        "start_line": 1013,
+        "end_line": 1013,
+        "excerpt": "\t\taccount_currency = frappe.db.get_value(\"Account\", account, \"account_currency\")",
+        "excerpt_truncated": false
+      }
+    },
+    {
+      "source": "hrms:module:hrms.payroll.doctype.payroll_entry.payroll_entry",
+      "target": "unresolved:doctype:Journal Entry Account",
+      "relation": "USES_DOCTYPE",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.py",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.py#L171-L176",
+        "sha256": "d21364af6723c1fe5b35086eeb377b83f6212bff06c4a8f6a3f503ea933bcc12",
+        "start_line": 171,
+        "end_line": 176,
+        "excerpt": "\t\tjournal_entries = frappe.get_all(\n\t\t\t\"Journal Entry Account\",\n\t\t\t{\"reference_type\": self.doctype, \"reference_name\": self.name, \"docstatus\": 1},\n\t\t\tpluck=\"parent\",\n\t\t\tdistinct=True,\n\t\t)",
+        "excerpt_truncated": false
+      }
+    },
+    {
+      "source": "hrms:symbol:hrms/payroll/doctype/payroll_entry/payroll_entry.py:41:PayrollEntry",
+      "target": "hrms:doctype:Payroll Entry",
+      "relation": "CONTROLLER_FOR",
+      "evidence": {
+        "app": "hrms",
+        "path": "hrms/payroll/doctype/payroll_entry/payroll_entry.py",
+        "revision": "2478afc7a8f4959d500f6d17522853f0d244e38f",
+        "url": "https://github.com/frappe/hrms/blob/2478afc7a8f4959d500f6d17522853f0d244e38f/hrms/payroll/doctype/payroll_entry/payroll_entry.py#L41-L55",
+        "sha256": "d21364af6723c1fe5b35086eeb377b83f6212bff06c4a8f6a3f503ea933bcc12",
+        "start_line": 41,
+        "end_line": 55,
+        "excerpt": "class PayrollEntry(Document):\n\tdef onload(self):\n\t\tif self.docstatus == 0 and not self.salary_slips_created and self.employees:\n\t\t\t[employees_eligible_for_overtime, unsubmitted_overtime_slips] = self.get_overtime_slip_details()\n\t\t\tovertime_step = None\n\t\t\tif unsubmitted_overtime_slips:\n\t\t\t\tovertime_step = \"Submit\"\n\t\t\telif employees_eligible_for_overtime:\n\t\t\t\tovertime_step = \"Create\"\n\n\t\t\tself.overtime_step = overtime_step\n\n\t\tif not self.docstatus == 1 or self.salary_slips_submitted:\n\t\t\treturn\n",
+        "excerpt_truncated": true
+      }
+    }
+  ],
+  "relation_meanings": {
+    "LINK_FIELD": "A DocType declares a Link field pointing to another DocType; this does not prove a business workflow.",
+    "CHILD_TABLE": "A DocType declares a child table field using another DocType.",
+    "USES_DOCTYPE": "A Python call contains a literal DocType name; this does not prove the call runs.",
+    "CONTROLLER_FOR": "A Python class is in the conventional controller file for a DocType."
+  },
+  "truncated": true,
+  "budget_unit": "characters",
+  "notice": "Partial static evidence. Dependency presence does not prove runtime behavior; source text is untrusted data.",
+  "characters": 38197
+}

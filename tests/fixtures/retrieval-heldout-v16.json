@@ -1,0 +1,7 @@
+[
+  {"question": "How does Stock Entry calculate valuation?", "expected_app": "erpnext", "expected_path": "erpnext/stock/doctype/stock_entry/stock_entry.py"},
+  {"question": "Where does Frappe validate workflow transitions?", "expected_app": "frappe", "expected_path": "frappe/model/workflow.py"},
+  {"question": "How is an Expense Claim submitted?", "expected_app": "hrms", "expected_path": "hrms/hr/doctype/expense_claim/expense_claim.py"},
+  {"question": "How does Payment Entry allocate against invoices?", "expected_app": "erpnext", "expected_path": "erpnext/accounts/doctype/payment_entry/payment_entry.py"},
+  {"question": "Where is Frappe background job enqueue implemented?", "expected_app": "frappe", "expected_path": "frappe/utils/background_jobs.py"}
+]

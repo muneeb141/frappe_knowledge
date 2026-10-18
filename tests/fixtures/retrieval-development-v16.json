@@ -1,0 +1,7 @@
+[
+  {"question": "How does a Leave Application check overlapping leave dates?", "expected_app": "hrms", "expected_path": "hrms/hr/doctype/leave_application/leave_application.py"},
+  {"question": "Where is Sales Invoice outstanding amount updated?", "expected_app": "erpnext", "expected_path": "erpnext/accounts/doctype/sales_invoice/sales_invoice.py"},
+  {"question": "How does Frappe check DocType permissions?", "expected_app": "frappe", "expected_path": "frappe/permissions.py"},
+  {"question": "How is Employee Advance repayment recorded?", "expected_app": "hrms", "expected_path": "hrms/hr/doctype/employee_advance/employee_advance.py"},
+  {"question": "How is a Purchase Receipt created from a Purchase Order?", "expected_app": "erpnext", "expected_path": "erpnext/buying/doctype/purchase_order/purchase_order.py"}
+]
