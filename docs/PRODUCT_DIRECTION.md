@@ -1,0 +1,21 @@
+# Product direction: local Frappe knowledge kit
+
+Updated 19 October 2026 after clarifying the intended users. The app is meant to be installed by other Frappe teams. It should give developer assistants and support staff a local, version-matched source of explanations and citations, so they do not need to repeat basic framework research or give an agent unrestricted web access.
+
+## What the kit should provide
+
+1. **Version-matched knowledge.** Record the installed Frappe, ERPNext, HRMS and supported custom-app revisions separately. Keep immutable source snapshots and an effective-site overlay for Custom Fields, Property Setters, workflows, settings and permissions. A source checkout does not by itself describe the configured site.
+2. **AI-readable, read-only access.** Return bounded context with plain-language source descriptions, typed relationships, exact source locations, coverage, unknowns and the selected snapshot ID. A future MCP/tool adapter can expose the same authorized contract to coding assistants. Retrieved source is untrusted data and cannot expand tool permissions.
+3. **Support interface.** Let authorized staff ask questions in a site UI and see cited answers, source/version applicability and explicit uncertainty. A language-model answer requires a configured model; a strictly offline deployment requires an approved local model. A cloud model can work without web-search permission, but it still sends selected context to its provider.
+4. **Controlled refresh.** An admin may reindex the apps already installed on the site without updating those apps or fetching from the internet. A later, separate operation may import a reviewed upstream knowledge pack for a chosen revision. Keep the old snapshot available until a new one validates and is selected. Show job state, source revisions, failures and coverage before activation.
+5. **Honest limits.** The kit cannot truthfully claim to know every behavior from static code. Dynamic dispatch, installed customization, runtime settings and business workflows need additional extractors, site metadata and tests. When evidence is missing, return that gap instead of a confident guess.
+
+## Existing projects and our boundary
+
+[Frappe Flow](https://raw.githubusercontent.com/frappe/flow_client/4a3189b6cbef0cad8ed16b24220d11242672996b/README.md) already provides agents, an in-site chat interface, tools and RAG over files, URLs and DocTypes. [Frappe Assistant Core](https://raw.githubusercontent.com/buildswithpaul/Frappe_Assistant_Core/3a7a0b4a3bf589334d7816065377e8cbbd4e5cd9/README.md) provides permission-scoped ERPNext tools, MCP access and an optional managed chat. These projects address important interaction and action layers. The specific hypothesis for this app is that **revision-pinned cross-app source evidence plus a site overlay and verified workflow records** improves developer/support answers beyond those tools alone. This has not been established by a head-to-head evaluation. Integrate through a read-only context contract if tests show value; do not duplicate their full agent platforms.
+
+## Current milestone and next gates
+
+The current v16 app can build and store a static Frappe/ERPNext/HRMS graph from clean local checkouts, answer bounded read-only context queries without network access, and queue an admin-only local reindex. The full eligible local source inventory and a rebuildable source-text chunk index are stored on the disposable development site. Search combines exact titles, graph links and MariaDB lexical matches. Its [retrieval check](RETRIEVAL_EVALUATION.md) found the expected file for four of five questions within five excerpts initially, and five of five after addressing the observed workflow ranking miss; larger untouched evaluation remains. A separate, admin-only first site overlay now captures effective field customizations, while workflow and permission metadata remain future work. The Desk page is an administrative JSON viewer, not the support chat.
+
+Next: extend site metadata to workflow and permission facts with source applicability, evaluate retrieval and citations on a larger untouched set, build the read-only developer tool and support UI, then evaluate one model. Add roles and project membership before support access. The clean-install check passed on an isolated local MariaDB site.
