@@ -1,0 +1,20 @@
+{
+  "doctype": "DocType",
+  "name": "FK Knowledge Row",
+  "module": "Frappe Knowledge",
+  "autoname": "hash",
+  "engine": "InnoDB",
+  "field_order": ["snapshot", "row_kind", "lookup_key", "source_key", "target_key", "position", "payload_json"],
+  "fields": [
+    {"fieldname": "snapshot", "label": "Snapshot", "fieldtype": "Link", "options": "FK Snapshot", "reqd": 1, "read_only": 1},
+    {"fieldname": "row_kind", "label": "Row Kind", "fieldtype": "Select", "options": "Node\nEdge\nTerm\nExact\nFile", "reqd": 1, "read_only": 1},
+    {"fieldname": "lookup_key", "label": "Lookup Key", "fieldtype": "Data", "reqd": 1, "read_only": 1},
+    {"fieldname": "source_key", "label": "Source Key", "fieldtype": "Data", "read_only": 1},
+    {"fieldname": "target_key", "label": "Target Key", "fieldtype": "Data", "read_only": 1},
+    {"fieldname": "position", "label": "Position", "fieldtype": "Int", "read_only": 1},
+    {"fieldname": "payload_json", "label": "Payload JSON", "fieldtype": "Long Text", "read_only": 1}
+  ],
+  "permissions": [],
+  "sort_field": "creation",
+  "sort_order": "DESC"
+}

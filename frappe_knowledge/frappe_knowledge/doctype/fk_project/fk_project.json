@@ -1,0 +1,66 @@
+{
+  "doctype": "DocType",
+  "name": "FK Project",
+  "module": "Frappe Knowledge",
+  "autoname": "field:project_key",
+  "engine": "InnoDB",
+  "field_order": [
+    "project_key",
+    "project_title",
+    "knowledge_profile",
+    "framework_major",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "project_key",
+      "label": "Project Key",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "project_title",
+      "label": "Title",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "knowledge_profile",
+      "label": "Knowledge Profile",
+      "fieldtype": "Select",
+      "options": "frappe-v16",
+      "default": "frappe-v16",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "framework_major",
+      "label": "Framework Major",
+      "fieldtype": "Select",
+      "options": "16",
+      "default": "16",
+      "reqd": 1
+    },
+    {
+      "fieldname": "notes",
+      "label": "Notes",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

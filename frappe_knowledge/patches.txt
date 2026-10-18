@@ -4,3 +4,8 @@
 
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
+frappe_knowledge.patches.v0_2.backfill_knowledge_profile
+frappe_knowledge.patches.v0_2.migrate_indexed_storage
+frappe_knowledge.patches.v0_3.backfill_exact_titles
+frappe_knowledge.patches.v0_4.add_source_search_index
+frappe_knowledge.patches.v0_4.add_chunk_file_lookup

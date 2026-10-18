@@ -1,0 +1,20 @@
+{
+  "doctype": "DocType",
+  "name": "FK Site Overlay",
+  "module": "Frappe Knowledge",
+  "autoname": "field:overlay_id",
+  "engine": "InnoDB",
+  "field_order": ["project", "source_snapshot", "overlay_id", "site", "knowledge_profile", "field_count", "metadata_json"],
+  "fields": [
+    {"fieldname": "project", "label": "Project", "fieldtype": "Link", "options": "FK Project", "reqd": 1, "read_only": 1},
+    {"fieldname": "source_snapshot", "label": "Source Snapshot", "fieldtype": "Link", "options": "FK Snapshot", "reqd": 1, "read_only": 1},
+    {"fieldname": "overlay_id", "label": "Overlay ID", "fieldtype": "Data", "reqd": 1, "unique": 1, "read_only": 1},
+    {"fieldname": "site", "label": "Site", "fieldtype": "Data", "reqd": 1, "read_only": 1},
+    {"fieldname": "knowledge_profile", "label": "Knowledge Profile", "fieldtype": "Select", "options": "frappe-v16", "reqd": 1, "read_only": 1},
+    {"fieldname": "field_count", "label": "Effective Fields", "fieldtype": "Int", "read_only": 1},
+    {"fieldname": "metadata_json", "label": "Site Metadata JSON", "fieldtype": "Long Text", "reqd": 1, "read_only": 1}
+  ],
+  "permissions": [{"role": "System Manager", "read": 1, "export": 1}],
+  "sort_field": "creation",
+  "sort_order": "DESC"
+}

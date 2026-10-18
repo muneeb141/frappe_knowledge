@@ -1,0 +1,118 @@
+{
+  "doctype": "DocType",
+  "name": "FK Snapshot",
+  "module": "Frappe Knowledge",
+  "autoname": "field:snapshot_id",
+  "engine": "InnoDB",
+  "field_order": [
+    "project",
+    "knowledge_profile",
+    "snapshot_id",
+    "coverage",
+    "indexed_files",
+    "node_count",
+    "edge_count",
+    "storage_format",
+    "stored_rows",
+    "source_chunks",
+    "metadata_json",
+    "graph_json"
+  ],
+  "fields": [
+    {
+      "fieldname": "project",
+      "label": "Project",
+      "fieldtype": "Link",
+      "options": "FK Project",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "knowledge_profile",
+      "label": "Knowledge Profile",
+      "fieldtype": "Select",
+      "options": "frappe-v16",
+      "reqd": 1,
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "snapshot_id",
+      "label": "Snapshot ID",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "coverage",
+      "label": "Coverage",
+      "fieldtype": "Select",
+      "options": "Partial",
+      "default": "Partial",
+      "read_only": 1
+    },
+    {
+      "fieldname": "indexed_files",
+      "label": "Indexed Files",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "node_count",
+      "label": "Nodes",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "edge_count",
+      "label": "Edges",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "storage_format",
+      "label": "Storage Format",
+      "fieldtype": "Select",
+      "options": "Legacy JSON\nIndexed Rows",
+      "default": "Legacy JSON",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "stored_rows",
+      "label": "Stored Rows",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "source_chunks",
+      "label": "Source Chunks",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "metadata_json",
+      "label": "Snapshot Metadata JSON",
+      "fieldtype": "Long Text",
+      "read_only": 1
+    },
+    {
+      "fieldname": "graph_json",
+      "label": "Graph JSON",
+      "fieldtype": "Long Text",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "export": 1
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

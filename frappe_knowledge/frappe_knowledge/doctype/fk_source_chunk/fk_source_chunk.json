@@ -1,0 +1,22 @@
+{
+  "doctype": "DocType",
+  "name": "FK Source Chunk",
+  "module": "Frappe Knowledge",
+  "autoname": "hash",
+  "engine": "InnoDB",
+  "field_order": ["snapshot", "source_app", "source_path", "file_sha256", "chunk_number", "start_line", "end_line", "content", "search_text"],
+  "fields": [
+    {"fieldname": "snapshot", "label": "Snapshot", "fieldtype": "Link", "options": "FK Snapshot", "reqd": 1, "read_only": 1},
+    {"fieldname": "source_app", "label": "Source App", "fieldtype": "Data", "reqd": 1, "read_only": 1},
+    {"fieldname": "source_path", "label": "Source Path", "fieldtype": "Small Text", "reqd": 1, "read_only": 1},
+    {"fieldname": "file_sha256", "label": "File SHA256", "fieldtype": "Data", "reqd": 1, "read_only": 1},
+    {"fieldname": "chunk_number", "label": "Chunk Number", "fieldtype": "Int", "reqd": 1, "read_only": 1},
+    {"fieldname": "start_line", "label": "Start Line", "fieldtype": "Int", "reqd": 1, "read_only": 1},
+    {"fieldname": "end_line", "label": "End Line", "fieldtype": "Int", "reqd": 1, "read_only": 1},
+    {"fieldname": "content", "label": "Source Text", "fieldtype": "Long Text", "reqd": 1, "read_only": 1},
+    {"fieldname": "search_text", "label": "Search Projection", "fieldtype": "Long Text", "reqd": 1, "read_only": 1}
+  ],
+  "permissions": [],
+  "sort_field": "creation",
+  "sort_order": "DESC"
+}

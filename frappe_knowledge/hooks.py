@@ -1,7 +1,7 @@
 app_name = "frappe_knowledge"
 app_title = "Frappe Knowledge"
 app_publisher = "Muneeb Mohammed"
-app_description = "Knowledge base for frappe eco-system"
+app_description = "Version-aware source evidence and dependency context for Frappe development"
 app_email = "muneeb@getlivo.in"
 app_license = "mit"
 
@@ -96,7 +96,7 @@ app_license = "mit"
 # ------------
 
 # before_install = "frappe_knowledge.install.before_install"
-# after_install = "frappe_knowledge.install.after_install"
+after_install = "frappe_knowledge.install.after_install"
 
 # Uninstallation
 # ------------
@@ -276,4 +276,3 @@ app_license = "mit"
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
-

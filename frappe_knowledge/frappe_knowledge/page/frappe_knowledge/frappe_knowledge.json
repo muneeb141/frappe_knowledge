@@ -1,0 +1,13 @@
+{
+  "doctype": "Page",
+  "name": "frappe-knowledge",
+  "page_name": "frappe-knowledge",
+  "title": "Frappe Knowledge",
+  "module": "Frappe Knowledge",
+  "standard": "Yes",
+  "roles": [
+    {
+      "role": "System Manager"
+    }
+  ]
+}
